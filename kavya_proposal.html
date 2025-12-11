@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Kavya</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: #f8e9f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 25px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+      transition: 0.3s ease;
+    }
+
+    .card h1 {
+      font-size: 28px;
+      color: #b85bbf;
+      margin-bottom: 15px;
+    }
+
+    .card p {
+      font-size: 18px;
+      color: #444;
+    }
+
+    .btns {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    button {
+      padding: 10px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    #yesBtn {
+      background: #b85bbf;
+      color: white;
+    }
+
+    #noBtn {
+      background: #ddd;
+      color: #333;
+    }
+
+    #noBtn:hover {
+      background: #ccc;
+    }
+
+    #yesBtn:hover {
+      background: #a44eaa;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card" id="step1">
+    <h1>Assalamu Alaikum, Kavya 🤍</h1>
+    <p>
+      I made this little cozy corner of the internet... because there is something I want to ask you.
+    </p>
+    <div class="btns">
+      <button id="yes1">Next ➜</button>
+    </div>
+  </div>
+
+  <div class="card hidden" id="step2">
+    <h1>Kavya, you’re special.</h1>
+    <p>
+      Your simplicity, your softness, your kindness — it inspires me.
+      So I want to ask you something…
+    </p>
+    <div class="btns">
+      <button id="yes2">Next ➜</button>
+    </div>
+  </div>
+
+  <div class="card hidden" id="step3">
+    <h1>Will You Be Mine? 💗</h1>
+    <p>
+      Kavya, will you be with me? Say yes? :)
+    </p>
+    <div class="btns">
+      <button id="yesBtn">Yes 🤍</button>
+      <button id="noBtn">No</button>
+    </div>
+  </div>
+
+  <div class="card hidden" id="yesScreen">
+    <h1>Alhamdulillah! 🤍</h1>
+    <p>
+      You just made me the happiest person today.
+    </p>
+  </div>
+
+  <div class="card hidden" id="noScreen">
+    <h1>Awww :(</h1>
+    <p>
+      It's okay... but I’ll still admire you from afar.
+    </p>
+  </div>
+
+  <script>
+    document.getElementById("yes1").addEventListener("click", () => {
+      document.getElementById("step1").classList.add("hidden");
+      document.getElementById("step2").classList.remove("hidden");
+    });
+
+    document.getElementById("yes2").addEventListener("click", () => {
+      document.getElementById("step2").classList.add("hidden");
+      document.getElementById("step3").classList.remove("hidden");
+    });
+
+    document.getElementById("yesBtn").addEventListener("click", () => {
+      document.getElementById("step3").classList.add("hidden");
+      document.getElementById("yesScreen").classList.remove("hidden");
+    });
+
+    document.getElementById("noBtn").addEventListener("click", () => {
+      document.getElementById("step3").classList.add("hidden");
+      document.getElementById("noScreen").classList.remove("hidden");
+    });
+  </script>
+
+</body>
+</html>
